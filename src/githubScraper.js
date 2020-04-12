@@ -1,4 +1,3 @@
-const testWebsite = "https://www.github.com/frasertooth";
 const cheerio = require("cheerio");
 const axios = require("axios");
 
@@ -17,7 +16,10 @@ const getContributions = async (githubURL) => {
       count,
     });
   });
-  console.log(data);
+
+  return data;
 };
 
-getContributions(testWebsite);
+module.exports = {
+  getContributions,
+};
