@@ -1,8 +1,4 @@
 {
-  "dependencies": {
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3"
-  },
   "name": "combine-git-contibutions",
   "version": "0.1.0",
   "description": "Grab Github contributions records from multiple profiles",
@@ -10,10 +6,14 @@
   "repository": "https://github.com/FraserTooth/combine-git-contibutions.git",
   "author": "Fraser Tooth <frasertooth@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "test": "node mocha ./test/"
-  },
   "private": false,
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.1.1"

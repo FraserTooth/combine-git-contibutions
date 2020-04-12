@@ -9,9 +9,20 @@ describe("Library Test", () => {
   });
 
   context("with array arguments", () => {
-    context("[]", () => {
+    context("empty array", () => {
       it("should return an empty array", () => {
         expect(contributions([])).to.deep.equal([]);
+      });
+    });
+    context("using one github link", () => {
+      const testURL = "https://www.github.com/FraserTooth";
+
+      it("should return an array of contributions data", (done) => {
+        const output = contributions([testURL]);
+        output.then((output) => {
+          expect(output[0].length).to.be.greaterThan(1);
+          done();
+        });
       });
     });
   });
