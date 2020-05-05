@@ -1,17 +1,22 @@
 const contributions = require("../src/combineGitContributions");
 const expect = require("chai").expect;
 
-describe("Library Test", () => {
+describe("Library Test", function () {
+  this.timeout(5000);
   context("with no Arguments", () => {
     it("should return undefined", () => {
-      expect(contributions()).to.equal(undefined);
+      contributions().then((result) => {
+        expect(result).to.equal(undefined);
+      });
     });
   });
 
   context("with array arguments", () => {
     context("empty array", () => {
       it("should return an empty array", () => {
-        expect(contributions([])).to.deep.equal([]);
+        contributions([]).then((result) => {
+          expect(result).to.deep.equal([]);
+        });
       });
     });
     context("using one github link", () => {
