@@ -42,7 +42,7 @@ const getContributions = async () => {
     graphElement.className = "graphElement";
 
     //Sort Into Rows
-    graphChildren[item.dayOfWeek].appendChild(graphElement);
+    graph.children[item.dayOfWeek].appendChild(graphElement);
   });
 };
 
