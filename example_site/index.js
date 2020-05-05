@@ -48,7 +48,7 @@ const getContributions = async () => {
       graphElement.style.backgroundColor = "darkgreen";
       graphElement.style.opacity = item.count / highestCommit / 2 + 0.5;
     }
-    graphElement.className = "graphElement";
+    graphElement.className = "graphElement col";
 
     //Sort Into Rows
     graph.children[item.dayOfWeek].appendChild(graphElement);
