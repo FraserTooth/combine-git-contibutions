@@ -1,4 +1,5 @@
 import contributions from "../src/combineGitContributions";
+import "bootstrap";
 
 console.log("Hello");
 
