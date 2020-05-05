@@ -43,12 +43,12 @@ const getContributions = async () => {
     graphElement.dataset.date = item.date;
     graphElement.dataset.count = item.count;
     if (item.count === 0) {
-      graphElement.style.backgroundColor = "grey";
+      graphElement.style.backgroundColor = "lightgrey";
     } else {
       graphElement.style.backgroundColor = "darkgreen";
       graphElement.style.opacity = item.count / highestCommit / 2 + 0.5;
     }
-    graphElement.className = "graphElement col";
+    graphElement.className = "graphElement";
 
     //Sort Into Rows
     graph.children[item.dayOfWeek].appendChild(graphElement);

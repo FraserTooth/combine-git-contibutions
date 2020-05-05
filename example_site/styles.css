@@ -1,4 +1,5 @@
 .graphElement {
-  padding-top: 100%;
+  width: 8;
+  height: 8;
   margin: 1px;
 }
