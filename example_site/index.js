@@ -15,6 +15,7 @@ const getContributions = async () => {
   const allContributions = await contributions([url1, url2]);
 
   //Combine the histories
+  let highestCommit = 0;
   const combined = [];
   for (let i = 0; i < allContributions[0].length; i++) {
     const repo1Element = allContributions[0][i];
@@ -22,9 +23,12 @@ const getContributions = async () => {
 
     const date = new Date(repo1Element.date);
 
+    const count = parseInt(repo1Element.count) + parseInt(repo2Element.count);
+    highestCommit = Math.max(count, highestCommit);
+
     combined.push({
       date,
-      count: parseInt(repo1Element.count) + parseInt(repo2Element.count),
+      count,
       dayOfWeek: date.getDay(),
     });
   }
@@ -38,7 +42,8 @@ const getContributions = async () => {
     const graphElement = document.createElement("div");
     graphElement.dataset.date = item.date;
     graphElement.dataset.count = item.count;
-    graphElement.style.color = "green";
+    graphElement.style.backgroundColor = "darkgreen";
+    graphElement.style.opacity = item.count / highestCommit;
     graphElement.className = "graphElement";
 
     //Sort Into Rows
