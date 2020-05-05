@@ -42,8 +42,12 @@ const getContributions = async () => {
     const graphElement = document.createElement("div");
     graphElement.dataset.date = item.date;
     graphElement.dataset.count = item.count;
-    graphElement.style.backgroundColor = "darkgreen";
-    graphElement.style.opacity = item.count / highestCommit;
+    if (item.count === 0) {
+      graphElement.style.backgroundColor = "grey";
+    } else {
+      graphElement.style.backgroundColor = "darkgreen";
+      graphElement.style.opacity = item.count / highestCommit / 2 + 0.5;
+    }
     graphElement.className = "graphElement";
 
     //Sort Into Rows
