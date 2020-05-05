@@ -10,12 +10,12 @@ module.exports = {
   // and webpack starts bundling
   output: {
     // options related to how webpack emits results
-    path: path.resolve(__dirname, "example_site/bundle"), // string
+    path: path.resolve(__dirname, "example_site"), // string
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
     filename: "bundle.js", // string
     // the filename template for entry chunks
-    publicPath: "/assets/", // string
+    publicPath: "/example_site/", // string
     // the url to the output directory resolved relative to the HTML page
   },
 };

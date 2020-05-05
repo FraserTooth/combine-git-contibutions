@@ -3,7 +3,7 @@ const axios = require("axios");
 
 const getContributions = async (githubURL) => {
   const data = [];
-  const result = await axios(githubURL);
+  const result = await axios(githubURL, { crossdomain: true });
   const $ = await cheerio.load(result.data);
   const days = $(".day");
 
