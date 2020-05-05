@@ -8,7 +8,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "webpack --config prod.config.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -16,6 +17,8 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.1"
+    "mocha": "^7.1.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
