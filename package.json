@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "test": "mocha",
-    "build": "webpack --config prod.config.js"
+    "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
